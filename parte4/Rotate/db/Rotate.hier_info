@@ -1,0 +1,837 @@
+|Rotate
+h00 <= HexDisplay:hex0.h0
+set => 4bit_multiplexer:mux0.select
+set => 4bit_multiplexer:mux1.select
+set => 4bit_multiplexer:mux2.select
+Clock => 4bit_D_Flipflop:ff0.Clk
+Clock => 4bit_D_Flipflop:ff1.Clk
+Clock => 4bit_D_Flipflop:ff2.Clk
+h01 <= HexDisplay:hex0.h1
+h02 <= HexDisplay:hex0.h2
+h03 <= HexDisplay:hex0.h3
+h04 <= HexDisplay:hex0.h4
+h05 <= HexDisplay:hex0.h5
+h06 <= HexDisplay:hex0.h6
+h10 <= HexDisplay:hex1.h0
+h11 <= HexDisplay:hex1.h1
+h12 <= HexDisplay:hex1.h2
+h13 <= HexDisplay:hex1.h3
+h14 <= HexDisplay:hex1.h4
+h15 <= HexDisplay:hex1.h5
+h16 <= HexDisplay:hex1.h6
+h20 <= HexDisplay:hex2.h0
+h21 <= HexDisplay:hex2.h1
+h22 <= HexDisplay:hex2.h2
+h23 <= HexDisplay:hex2.h3
+h24 <= HexDisplay:hex2.h4
+h25 <= HexDisplay:hex2.h5
+h26 <= HexDisplay:hex2.h6
+
+
+|Rotate|HexDisplay:hex0
+h0 <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+x3 => inst5.IN0
+x3 => inst7.IN0
+x3 => inst40.IN0
+x3 => inst13.IN0
+x3 => inst.IN0
+x3 => inst18.IN0
+x3 => inst47.IN0
+x3 => inst14.IN0
+x3 => inst16.IN0
+x3 => inst50.IN0
+x3 => inst46.IN0
+x2 => inst4.IN0
+x2 => inst7.IN1
+x2 => inst6.IN1
+x2 => inst13.IN1
+x2 => inst17.IN0
+x2 => inst12.IN1
+x2 => inst18.IN1
+x2 => inst47.IN1
+x2 => inst30.IN1
+x2 => inst14.IN1
+x2 => inst15.IN1
+x2 => inst16.IN1
+x2 => inst50.IN1
+x2 => inst43.IN1
+x2 => inst45.IN0
+x1 => inst3.IN0
+x1 => inst40.IN2
+x1 => inst17.IN1
+x1 => inst.IN1
+x1 => inst18.IN2
+x1 => inst48.IN2
+x1 => inst33.IN1
+x1 => inst34.IN2
+x1 => inst15.IN2
+x1 => inst50.IN2
+x1 => inst45.IN1
+x1 => inst46.IN2
+x0 => inst41.IN3
+x0 => inst7.IN3
+x0 => inst40.IN3
+x0 => inst2.IN0
+x0 => inst12.IN3
+x0 => inst.IN2
+x0 => inst29.IN1
+x0 => inst31.IN2
+x0 => inst14.IN3
+x0 => inst33.IN2
+x0 => inst42.IN2
+x0 => inst15.IN3
+x0 => inst45.IN2
+x0 => inst44.IN2
+h1 <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+h2 <= inst49.DB_MAX_OUTPUT_PORT_TYPE
+h4 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+h5 <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+h6 <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+h3 <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|Rotation:rot0
+n3 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+p0 => inst.IN0
+n2 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+n1 <= p1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => n1.DATAIN
+n0 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+p2 => inst1.IN0
+p3 => ~NO_FANOUT~
+
+
+|Rotate|4bit_D_Flipflop:ff0
+n3 <= D_FlipFlop:inst.Q
+p3 => D_FlipFlop:inst.D
+Clk => D_FlipFlop:inst.Clk
+Clk => D_FlipFlop:inst1.Clk
+Clk => D_FlipFlop:inst2.Clk
+Clk => D_FlipFlop:inst3.Clk
+Clear => D_FlipFlop:inst.Clear
+Clear => D_FlipFlop:inst1.Clear
+Clear => D_FlipFlop:inst2.Clear
+Clear => D_FlipFlop:inst3.Clear
+n2 <= D_FlipFlop:inst1.Q
+p2 => D_FlipFlop:inst1.D
+n1 <= D_FlipFlop:inst2.Q
+p1 => D_FlipFlop:inst2.D
+n0 <= D_FlipFlop:inst3.Q
+p0 => D_FlipFlop:inst3.D
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst1
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst1|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst1|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst2
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst2|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst2|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst3
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst3|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff0|D_FlipFlop:inst3|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_multiplexer:mux0
+o3 <= 1bit_multiplexer:inst3.out
+i31 => 1bit_multiplexer:inst3.i1
+i30 => 1bit_multiplexer:inst3.i0
+select => 1bit_multiplexer:inst3.select
+select => 1bit_multiplexer:inst1.select
+select => 1bit_multiplexer:inst.select
+o2 <= 1bit_multiplexer:inst2.out
+o1 <= 1bit_multiplexer:inst1.out
+i11 => 1bit_multiplexer:inst1.i1
+i10 => 1bit_multiplexer:inst1.i0
+o0 <= 1bit_multiplexer:inst.out
+i01 => 1bit_multiplexer:inst.i1
+i00 => 1bit_multiplexer:inst.i0
+i21 => ~NO_FANOUT~
+i20 => ~NO_FANOUT~
+
+
+|Rotate|4bit_multiplexer:mux0|1bit_multiplexer:inst3
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux0|1bit_multiplexer:inst2
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux0|1bit_multiplexer:inst1
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux0|1bit_multiplexer:inst
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|2:preset0
+d3 <= <GND>
+d2 <= <GND>
+d1 <= <VCC>
+d0 <= <GND>
+
+
+|Rotate|HexDisplay:hex1
+h0 <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+x3 => inst5.IN0
+x3 => inst7.IN0
+x3 => inst40.IN0
+x3 => inst13.IN0
+x3 => inst.IN0
+x3 => inst18.IN0
+x3 => inst47.IN0
+x3 => inst14.IN0
+x3 => inst16.IN0
+x3 => inst50.IN0
+x3 => inst46.IN0
+x2 => inst4.IN0
+x2 => inst7.IN1
+x2 => inst6.IN1
+x2 => inst13.IN1
+x2 => inst17.IN0
+x2 => inst12.IN1
+x2 => inst18.IN1
+x2 => inst47.IN1
+x2 => inst30.IN1
+x2 => inst14.IN1
+x2 => inst15.IN1
+x2 => inst16.IN1
+x2 => inst50.IN1
+x2 => inst43.IN1
+x2 => inst45.IN0
+x1 => inst3.IN0
+x1 => inst40.IN2
+x1 => inst17.IN1
+x1 => inst.IN1
+x1 => inst18.IN2
+x1 => inst48.IN2
+x1 => inst33.IN1
+x1 => inst34.IN2
+x1 => inst15.IN2
+x1 => inst50.IN2
+x1 => inst45.IN1
+x1 => inst46.IN2
+x0 => inst41.IN3
+x0 => inst7.IN3
+x0 => inst40.IN3
+x0 => inst2.IN0
+x0 => inst12.IN3
+x0 => inst.IN2
+x0 => inst29.IN1
+x0 => inst31.IN2
+x0 => inst14.IN3
+x0 => inst33.IN2
+x0 => inst42.IN2
+x0 => inst15.IN3
+x0 => inst45.IN2
+x0 => inst44.IN2
+h1 <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+h2 <= inst49.DB_MAX_OUTPUT_PORT_TYPE
+h4 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+h5 <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+h6 <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+h3 <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|Rotation:rot1
+n3 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+p0 => inst.IN0
+n2 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+n1 <= p1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => n1.DATAIN
+n0 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+p2 => inst1.IN0
+p3 => ~NO_FANOUT~
+
+
+|Rotate|4bit_D_Flipflop:ff1
+n3 <= D_FlipFlop:inst.Q
+p3 => D_FlipFlop:inst.D
+Clk => D_FlipFlop:inst.Clk
+Clk => D_FlipFlop:inst1.Clk
+Clk => D_FlipFlop:inst2.Clk
+Clk => D_FlipFlop:inst3.Clk
+Clear => D_FlipFlop:inst.Clear
+Clear => D_FlipFlop:inst1.Clear
+Clear => D_FlipFlop:inst2.Clear
+Clear => D_FlipFlop:inst3.Clear
+n2 <= D_FlipFlop:inst1.Q
+p2 => D_FlipFlop:inst1.D
+n1 <= D_FlipFlop:inst2.Q
+p1 => D_FlipFlop:inst2.D
+n0 <= D_FlipFlop:inst3.Q
+p0 => D_FlipFlop:inst3.D
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst1
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst1|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst1|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst2
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst2|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst2|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst3
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst3|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff1|D_FlipFlop:inst3|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_multiplexer:mux1
+o3 <= 1bit_multiplexer:inst3.out
+i31 => 1bit_multiplexer:inst3.i1
+i30 => 1bit_multiplexer:inst3.i0
+select => 1bit_multiplexer:inst3.select
+select => 1bit_multiplexer:inst1.select
+select => 1bit_multiplexer:inst.select
+o2 <= 1bit_multiplexer:inst2.out
+o1 <= 1bit_multiplexer:inst1.out
+i11 => 1bit_multiplexer:inst1.i1
+i10 => 1bit_multiplexer:inst1.i0
+o0 <= 1bit_multiplexer:inst.out
+i01 => 1bit_multiplexer:inst.i1
+i00 => 1bit_multiplexer:inst.i0
+i21 => ~NO_FANOUT~
+i20 => ~NO_FANOUT~
+
+
+|Rotate|4bit_multiplexer:mux1|1bit_multiplexer:inst3
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux1|1bit_multiplexer:inst2
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux1|1bit_multiplexer:inst1
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux1|1bit_multiplexer:inst
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|e:preset1
+d3 <= <VCC>
+d2 <= <VCC>
+d1 <= <VCC>
+d0 <= <VCC>
+
+
+|Rotate|HexDisplay:hex2
+h0 <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+x3 => inst5.IN0
+x3 => inst7.IN0
+x3 => inst40.IN0
+x3 => inst13.IN0
+x3 => inst.IN0
+x3 => inst18.IN0
+x3 => inst47.IN0
+x3 => inst14.IN0
+x3 => inst16.IN0
+x3 => inst50.IN0
+x3 => inst46.IN0
+x2 => inst4.IN0
+x2 => inst7.IN1
+x2 => inst6.IN1
+x2 => inst13.IN1
+x2 => inst17.IN0
+x2 => inst12.IN1
+x2 => inst18.IN1
+x2 => inst47.IN1
+x2 => inst30.IN1
+x2 => inst14.IN1
+x2 => inst15.IN1
+x2 => inst16.IN1
+x2 => inst50.IN1
+x2 => inst43.IN1
+x2 => inst45.IN0
+x1 => inst3.IN0
+x1 => inst40.IN2
+x1 => inst17.IN1
+x1 => inst.IN1
+x1 => inst18.IN2
+x1 => inst48.IN2
+x1 => inst33.IN1
+x1 => inst34.IN2
+x1 => inst15.IN2
+x1 => inst50.IN2
+x1 => inst45.IN1
+x1 => inst46.IN2
+x0 => inst41.IN3
+x0 => inst7.IN3
+x0 => inst40.IN3
+x0 => inst2.IN0
+x0 => inst12.IN3
+x0 => inst.IN2
+x0 => inst29.IN1
+x0 => inst31.IN2
+x0 => inst14.IN3
+x0 => inst33.IN2
+x0 => inst42.IN2
+x0 => inst15.IN3
+x0 => inst45.IN2
+x0 => inst44.IN2
+h1 <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+h2 <= inst49.DB_MAX_OUTPUT_PORT_TYPE
+h4 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+h5 <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+h6 <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+h3 <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|Rotation:rot2
+n3 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+p0 => inst.IN0
+n2 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+n1 <= p1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => n1.DATAIN
+n0 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+p2 => inst1.IN0
+p3 => ~NO_FANOUT~
+
+
+|Rotate|4bit_D_Flipflop:ff2
+n3 <= D_FlipFlop:inst.Q
+p3 => D_FlipFlop:inst.D
+Clk => D_FlipFlop:inst.Clk
+Clk => D_FlipFlop:inst1.Clk
+Clk => D_FlipFlop:inst2.Clk
+Clk => D_FlipFlop:inst3.Clk
+Clear => D_FlipFlop:inst.Clear
+Clear => D_FlipFlop:inst1.Clear
+Clear => D_FlipFlop:inst2.Clear
+Clear => D_FlipFlop:inst3.Clear
+n2 <= D_FlipFlop:inst1.Q
+p2 => D_FlipFlop:inst1.D
+n1 <= D_FlipFlop:inst2.Q
+p1 => D_FlipFlop:inst2.D
+n0 <= D_FlipFlop:inst3.Q
+p0 => D_FlipFlop:inst3.D
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst1
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst1|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst1|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst2
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst2|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst2|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst3
+Q <= D_Latch:inst.Q
+D => D_Latch:inst3.D
+Clk => D_Latch:inst3.Clk
+Clk => inst4.IN0
+Clear => D_Latch:inst3.Clear
+Clear => D_Latch:inst.Clear
+notQ <= D_Latch:inst.notQ
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst3|D_Latch:inst
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_D_Flipflop:ff2|D_FlipFlop:inst3|D_Latch:inst3
+Q <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D => inst4.IN0
+D => inst.IN1
+Clk => inst1.IN1
+Clk => inst.IN0
+Clear => inst6.IN0
+notQ <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Rotate|4bit_multiplexer:mux2
+o3 <= 1bit_multiplexer:inst3.out
+i31 => 1bit_multiplexer:inst3.i1
+i30 => 1bit_multiplexer:inst3.i0
+select => 1bit_multiplexer:inst3.select
+select => 1bit_multiplexer:inst1.select
+select => 1bit_multiplexer:inst.select
+o2 <= 1bit_multiplexer:inst2.out
+o1 <= 1bit_multiplexer:inst1.out
+i11 => 1bit_multiplexer:inst1.i1
+i10 => 1bit_multiplexer:inst1.i0
+o0 <= 1bit_multiplexer:inst.out
+i01 => 1bit_multiplexer:inst.i1
+i00 => 1bit_multiplexer:inst.i0
+i21 => ~NO_FANOUT~
+i20 => ~NO_FANOUT~
+
+
+|Rotate|4bit_multiplexer:mux2|1bit_multiplexer:inst3
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux2|1bit_multiplexer:inst2
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux2|1bit_multiplexer:inst1
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|4bit_multiplexer:mux2|1bit_multiplexer:inst
+out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+i0 => inst2.IN0
+select => inst4.IN0
+select => inst.IN1
+i1 => inst.IN0
+
+
+|Rotate|d:preset2
+d3 <= <VCC>
+d2 <= <VCC>
+d1 <= <VCC>
+d0 <= <GND>
+
+

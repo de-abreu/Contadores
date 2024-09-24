@@ -1,0 +1,61 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- N <= 23;
+
+entity parte2 is
+    port (
+        clk:    in  std_logic;
+        reset:  in  std_logic;
+        en:     in  std_logic;
+        q:      out std_logic_vector (15 to 0);
+		  qTeste: out std_logic;
+		  qTesteDisp: out std_logic
+    );
+end entity;
+
+architecture foo of parte2 is
+
+    signal cnt:         std_logic_vector (0 to 23);
+    signal t:           std_logic_vector (0 to 23); 
+	 
+	 component display7seg is 
+		port (
+			x0: in  std_logic;
+			x1: in  std_logic;
+			x2: in  std_logic;
+			x3: in  std_logic;
+			h0 :  out  std_logic;
+			h1 :  out  std_logic;
+			h2 :  out  std_logic;
+			h4 :  out  std_logic;
+			h5 :  out  std_logic;
+			h6 :  out  std_logic;
+			h3 :  out  std_logic
+		);
+		
+	end component;
+	
+	signal qVar: unsigned (0 to 23);
+begin
+
+	process (clk)
+		begin 
+		
+		if rising_edge(clk) then
+			qVAr <= unsigned(qVar) + 1;
+		end if;
+	
+	end process;
+	
+		
+    -- q <= cnt;
+	 qTeste <= clk;
+	 qTesteDisp <= clk;
+	 
+	
+	q <= std_logic_vector(qVar);
+
+	 
+end architecture;

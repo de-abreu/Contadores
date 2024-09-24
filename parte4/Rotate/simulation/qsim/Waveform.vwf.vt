@@ -1,0 +1,105 @@
+// Copyright (C) 2021  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "09/17/2024 17:21:57"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          Rotate
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Rotate_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg Clock;
+reg set;
+// wires                                               
+wire h00;
+wire h01;
+wire h02;
+wire h03;
+wire h04;
+wire h05;
+wire h06;
+wire h10;
+wire h11;
+wire h12;
+wire h13;
+wire h14;
+wire h15;
+wire h16;
+wire h20;
+wire h21;
+wire h22;
+wire h23;
+wire h24;
+wire h25;
+wire h26;
+
+// assign statements (if any)                          
+Rotate i1 (
+// port map - connection between master ports and signals/registers   
+	.Clock(Clock),
+	.h00(h00),
+	.h01(h01),
+	.h02(h02),
+	.h03(h03),
+	.h04(h04),
+	.h05(h05),
+	.h06(h06),
+	.h10(h10),
+	.h11(h11),
+	.h12(h12),
+	.h13(h13),
+	.h14(h14),
+	.h15(h15),
+	.h16(h16),
+	.h20(h20),
+	.h21(h21),
+	.h22(h22),
+	.h23(h23),
+	.h24(h24),
+	.h25(h25),
+	.h26(h26),
+	.set(set)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// Clock
+always
+begin
+	Clock = 1'b0;
+	Clock = #25000 1'b1;
+	#25000;
+end 
+
+// set
+initial
+begin
+	set = 1'b0;
+	set = #320000 1'b1;
+end 
+endmodule
+

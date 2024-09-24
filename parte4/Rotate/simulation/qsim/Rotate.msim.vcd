@@ -1,0 +1,248 @@
+$comment
+	File created using the following command:
+		vcd file Rotate.msim.vcd -direction
+$end
+$date
+	Tue Sep 17 17:21:59 2024
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module Rotate_vlg_vec_tst $end
+$var reg 1 ! Clock $end
+$var reg 1 " set $end
+$var wire 1 # h00 $end
+$var wire 1 $ h01 $end
+$var wire 1 % h02 $end
+$var wire 1 & h03 $end
+$var wire 1 ' h04 $end
+$var wire 1 ( h05 $end
+$var wire 1 ) h06 $end
+$var wire 1 * h10 $end
+$var wire 1 + h11 $end
+$var wire 1 , h12 $end
+$var wire 1 - h13 $end
+$var wire 1 . h14 $end
+$var wire 1 / h15 $end
+$var wire 1 0 h16 $end
+$var wire 1 1 h20 $end
+$var wire 1 2 h21 $end
+$var wire 1 3 h22 $end
+$var wire 1 4 h23 $end
+$var wire 1 5 h24 $end
+$var wire 1 6 h25 $end
+$var wire 1 7 h26 $end
+
+$scope module i1 $end
+$var wire 1 8 gnd $end
+$var wire 1 9 vcc $end
+$var wire 1 : unknown $end
+$var tri1 1 ; devclrn $end
+$var tri1 1 < devpor $end
+$var tri1 1 = devoe $end
+$var wire 1 > Clock~input_o $end
+$var wire 1 ? set~input_o $end
+$var wire 1 @ h00~output_o $end
+$var wire 1 A h01~output_o $end
+$var wire 1 B h02~output_o $end
+$var wire 1 C h03~output_o $end
+$var wire 1 D h04~output_o $end
+$var wire 1 E h05~output_o $end
+$var wire 1 F h06~output_o $end
+$var wire 1 G h10~output_o $end
+$var wire 1 H h11~output_o $end
+$var wire 1 I h12~output_o $end
+$var wire 1 J h13~output_o $end
+$var wire 1 K h14~output_o $end
+$var wire 1 L h15~output_o $end
+$var wire 1 M h16~output_o $end
+$var wire 1 N h20~output_o $end
+$var wire 1 O h21~output_o $end
+$var wire 1 P h22~output_o $end
+$var wire 1 Q h23~output_o $end
+$var wire 1 R h24~output_o $end
+$var wire 1 S h25~output_o $end
+$var wire 1 T h26~output_o $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+1$
+1%
+0&
+0'
+0(
+1)
+0*
+1+
+1,
+0-
+0.
+0/
+10
+01
+12
+13
+04
+05
+06
+17
+08
+19
+x:
+1;
+1<
+1=
+0>
+0?
+0@
+1A
+1B
+0C
+0D
+0E
+1F
+0G
+1H
+1I
+0J
+0K
+0L
+1M
+0N
+1O
+1P
+0Q
+0R
+0S
+1T
+$end
+#25000
+1!
+1>
+#50000
+0!
+0>
+#75000
+1!
+1>
+#100000
+0!
+0>
+#125000
+1!
+1>
+#150000
+0!
+0>
+#175000
+1!
+1>
+#200000
+0!
+0>
+#225000
+1!
+1>
+#250000
+0!
+0>
+#275000
+1!
+1>
+#300000
+0!
+0>
+#320000
+1"
+1?
+#325000
+1!
+1>
+#350000
+0!
+0>
+#375000
+1!
+1>
+#400000
+0!
+0>
+#425000
+1!
+1>
+#450000
+0!
+0>
+#475000
+1!
+1>
+#500000
+0!
+0>
+#525000
+1!
+1>
+#550000
+0!
+0>
+#575000
+1!
+1>
+#600000
+0!
+0>
+#625000
+1!
+1>
+#650000
+0!
+0>
+#675000
+1!
+1>
+#700000
+0!
+0>
+#725000
+1!
+1>
+#750000
+0!
+0>
+#775000
+1!
+1>
+#800000
+0!
+0>
+#825000
+1!
+1>
+#850000
+0!
+0>
+#875000
+1!
+1>
+#900000
+0!
+0>
+#925000
+1!
+1>
+#950000
+0!
+0>
+#975000
+1!
+1>
+#1000000

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Sep 17 15:37:16 2024
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : parte1PlacaGrande
+Top-level Entity Name : parte1PlacaGrande
+Family : Cyclone IV E
+Total logic elements : 12
+    Total combinational functions : 12
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 12
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

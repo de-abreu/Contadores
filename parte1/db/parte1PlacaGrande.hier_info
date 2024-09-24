@@ -1,0 +1,145 @@
+|parte1PlacaGrande
+clk => tFlipFlop:tFlipFlop_0.clk
+clk => tFlipFlop:tFlipFlop_1.clk
+clk => tFlipFlop:tFlipFlop_2.clk
+clk => tFlipFlop:tFlipFlop_3.clk
+clk => tFlipFlop:tFlipFlop_4.clk
+clk => tFlipFlop:tFlipFlop_5.clk
+clk => tFlipFlop:tFlipFlop_6.clk
+clk => tFlipFlop:tFlipFlop_7.clk
+clk => qTeste.DATAIN
+reset => tFlipFlop:tFlipFlop_0.reset
+reset => tFlipFlop:tFlipFlop_1.reset
+reset => tFlipFlop:tFlipFlop_2.reset
+reset => tFlipFlop:tFlipFlop_3.reset
+reset => tFlipFlop:tFlipFlop_4.reset
+reset => tFlipFlop:tFlipFlop_5.reset
+reset => tFlipFlop:tFlipFlop_6.reset
+reset => tFlipFlop:tFlipFlop_7.reset
+en => t[1].IN1
+en => tFlipFlop:tFlipFlop_0.t
+q[7] << <GND>
+q[6] << display7seg:displayHex_0.h6
+q[5] << display7seg:displayHex_0.h5
+q[4] << display7seg:displayHex_0.h4
+q[3] << display7seg:displayHex_0.h3
+q[2] << display7seg:displayHex_0.h2
+q[1] << display7seg:displayHex_0.h1
+q[0] << display7seg:displayHex_0.h0
+qTeste << clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|tFlipFlop:tFlipFlop_0
+clk => q_reg.CLK
+reset => q_reg.ACLR
+t => q_reg.ENA
+q <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|tFlipFlop:tFlipFlop_1
+clk => q_reg.CLK
+reset => q_reg.ACLR
+t => q_reg.ENA
+q <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|tFlipFlop:tFlipFlop_2
+clk => q_reg.CLK
+reset => q_reg.ACLR
+t => q_reg.ENA
+q <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|tFlipFlop:tFlipFlop_3
+clk => q_reg.CLK
+reset => q_reg.ACLR
+t => q_reg.ENA
+q <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|tFlipFlop:tFlipFlop_4
+clk => q_reg.CLK
+reset => q_reg.ACLR
+t => q_reg.ENA
+q <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|tFlipFlop:tFlipFlop_5
+clk => q_reg.CLK
+reset => q_reg.ACLR
+t => q_reg.ENA
+q <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|tFlipFlop:tFlipFlop_6
+clk => q_reg.CLK
+reset => q_reg.ACLR
+t => q_reg.ENA
+q <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|tFlipFlop:tFlipFlop_7
+clk => q_reg.CLK
+reset => q_reg.ACLR
+t => q_reg.ENA
+q <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|parte1PlacaGrande|display7seg:displayHex_0
+x0 => SYNTHESIZED_WIRE_7.IN1
+x0 => SYNTHESIZED_WIRE_6.IN1
+x0 => SYNTHESIZED_WIRE_15.IN1
+x0 => SYNTHESIZED_WIRE_19.IN1
+x0 => SYNTHESIZED_WIRE_12.IN0
+x0 => SYNTHESIZED_WIRE_13.IN1
+x0 => SYNTHESIZED_WIRE_16.IN1
+x0 => SYNTHESIZED_WIRE_2.IN1
+x0 => SYNTHESIZED_WIRE_0.IN1
+x0 => SYNTHESIZED_WIRE_18.IN1
+x0 => SYNTHESIZED_WIRE_11.IN1
+x0 => SYNTHESIZED_WIRE_9.IN1
+x0 => SYNTHESIZED_WIRE_1.IN1
+x0 => SYNTHESIZED_WIRE_4.IN1
+x0 => SYNTHESIZED_WIRE_20.IN1
+x0 => SYNTHESIZED_WIRE_5.IN1
+x0 => SYNTHESIZED_WIRE_8.IN1
+x0 => SYNTHESIZED_WIRE_10.IN1
+x0 => SYNTHESIZED_WIRE_24.IN1
+x0 => SYNTHESIZED_WIRE_23.IN1
+x0 => SYNTHESIZED_WIRE_3.IN1
+x1 => SYNTHESIZED_WIRE_7.IN0
+x1 => SYNTHESIZED_WIRE_19.IN1
+x1 => SYNTHESIZED_WIRE_5.IN0
+x1 => SYNTHESIZED_WIRE_22.IN1
+x1 => SYNTHESIZED_WIRE_16.IN0
+x1 => SYNTHESIZED_WIRE_2.IN1
+x1 => SYNTHESIZED_WIRE_17.IN1
+x1 => SYNTHESIZED_WIRE_21.IN1
+x1 => SYNTHESIZED_WIRE_13.IN0
+x1 => SYNTHESIZED_WIRE_0.IN1
+x1 => SYNTHESIZED_WIRE_14.IN1
+x1 => SYNTHESIZED_WIRE_1.IN1
+x2 => SYNTHESIZED_WIRE_5.IN1
+x2 => SYNTHESIZED_WIRE_21.IN0
+x2 => SYNTHESIZED_WIRE_3.IN0
+x2 => SYNTHESIZED_WIRE_1.IN0
+x2 => SYNTHESIZED_WIRE_13.IN1
+x2 => SYNTHESIZED_WIRE_2.IN0
+x2 => SYNTHESIZED_WIRE_0.IN0
+x3 => SYNTHESIZED_WIRE_7.IN1
+x3 => SYNTHESIZED_WIRE_2.IN1
+x3 => SYNTHESIZED_WIRE_21.IN1
+x3 => SYNTHESIZED_WIRE_1.IN1
+x3 => SYNTHESIZED_WIRE_12.IN1
+x3 => SYNTHESIZED_WIRE_16.IN1
+x3 => SYNTHESIZED_WIRE_0.IN1
+x3 => SYNTHESIZED_WIRE_3.IN1
+h0 <= h0.DB_MAX_OUTPUT_PORT_TYPE
+h1 <= h1.DB_MAX_OUTPUT_PORT_TYPE
+h2 <= h2.DB_MAX_OUTPUT_PORT_TYPE
+h4 <= h4.DB_MAX_OUTPUT_PORT_TYPE
+h5 <= h5.DB_MAX_OUTPUT_PORT_TYPE
+h6 <= h6.DB_MAX_OUTPUT_PORT_TYPE
+h3 <= h3.DB_MAX_OUTPUT_PORT_TYPE
+
+
